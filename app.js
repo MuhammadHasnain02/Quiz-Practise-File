@@ -163,6 +163,168 @@
 // console.log(bodyElDiv)
 // console.log(bodyElScr)
 
+// ==================== Date =====================
+
+// let date = new Date()
+// let miliSec = date.getTime()
+// document.writeln("miliSec => " , miliSec);
+
+// let userDate = new Date("")
+// let userMiliSec = userDate.getTime()
+// document.writeln("userMiliSec => " , userMiliSec);
+
+// let minus = miliSec - userMiliSec
+// document.writeln(minus);
+
+// let formula = minus / (1000 * 60 * 60 * 24 * 365)
+// document.writeln(Math.floor(formula));
+
+// =================== Switch Statement ======================
+
+// let num = prompt("enter number")
+
+// switch (num) {
+
+//     case "5":
+//         console.log("this is 5")
+//         break;
+//     case "4":
+//         console.log("this is 4");
+//         break;
+
+//     default:
+//         console.log("this is invalid number")
+//         break;
+
+// }
+
+// =================== replace & replaceAll ======================
+
+// let txt = "hello world"
+// console.log(txt);
+
+// let txt2 = txt.replace("hello" , "hi")
+// console.log(txt2);
+
+// let txt3 = txt.replace("world" , "Js")
+// console.log(txt3);
+
+// --------------------------
+
+// let txt = "hello world , hello Js"
+// console.log(txt);
+
+// let txt2 = txt.replace(/hello/g , "hi")
+// console.log(txt2);
+
+// let txt3 = txt.replaceAll("hello" , "hi")
+// console.log(txt3);
+
+// =================== D/B : var, let and const ======================
+
+// console.log(a); // undefined
+// console.log(b); // Uncaught ReferenceError: Cannot access 'b' before initialization
+// console.log(c); // Uncaught ReferenceError: Cannot access 'c' before initialization
+
+// var a = 1
+// console.log(a); // 1
+
+// let b = 2
+// console.log(b); // 2
+
+// const c = 3
+// console.log(c);  // 3
+
+// =================== Truty and falsy Values ======================
+
+// true (the Boolean primitive)
+// Any non-zero number (e.g., 1, -1, 42, 3.14)
+// Any non-empty string (e.g., "hello", "false", "0")
+// Objects (including empty objects {} and arrays [])
+// Functions
+// Dates
+// Symbols
+
+// ------------------------------
+
+// false (the Boolean primitive)
+// 0 (the number zero)
+// -0 (negative zero)
+// 0n (BigInt zero)
+// "" (an empty string)
+// null
+// undefined
+// NaN (Not a Number)
+
+// ------------------------------
+
+// if (0) {
+//   console.log("This will not print, as 0 is falsy.");
+// }
+
+// if ("hello") {
+//   console.log("This will print, as 'hello' is truthy.");
+// }
+
+// let myVariable; // undefined, which is falsy
+// if (myVariable) {
+//   console.log("This will not print.");
+// }
+
+// let myArray = []; // empty array, which is truthy
+// if (myArray) {
+//   console.log("This will print, even though the array is empty.");
+// }
+
+// =================== short ques ======================
+
+// var a = false || true
+// console.log(a); // true
+
+// var b = false && true
+// console.log(b); // false
+
+// var c = 0 || 1
+// console.log(c); // 1
+
+// var d = 0 && 1
+// console.log(d); // 0
+
+// var e;
+// console.log(e); // undefined
+ 
+// console.log(f); // Uncaught ReferenceError: f is not defined
+
+// =================== Ternery Operator ======================
+
+// let a = 1
+// let b = (a == 1 ? console.log("yes") : console.log("no"))
+
+// =================== While Loop ======================
+
+let a = 1
+
+while (a <= 10) {
+    console.log(a);
+    a++
+}
+
+// =========================================
+
+
+
+// =========================================
+
+
+
+// =========================================
+
+
+
+// =========================================
+
+
+
 // =========================================
 
 

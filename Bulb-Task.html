@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Task</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<!-- This task in One Button ON|Off -->
+<body class="">
+
+    <div>
+        <div class="w-30 m-auto">
+            <img id="bulbImg" src="https://m.media-amazon.com/images/I/51LWbha07VL._UF1000,1000_QL80_.jpg" alt="Images not Found">
+        </div>
+        <div class="flex flex-row justify-center">
+            <button id="bulbOnOffBtn" class="border border-black rounded-full px-2 py-2 hover:cursor-pointer">ON</button>
+        </div>
+    </div>
+
+    <script>
+
+        let bulbImg = document.getElementById("bulbImg")
+        let bulbOnOffBtn = document.getElementById("bulbOnOffBtn")
+        let isOn = false
+        
+        function bulbOnOff() {
+
+            if (isOn) {
+                bulbImg.src = "https://m.media-amazon.com/images/I/51LWbha07VL._UF1000,1000_QL80_.jpg"
+                bulbOnOffBtn.innerText = "On"
+                isOn = false
+            }
+            else {
+                bulbImg.src = "https://cdn.mos.cms.futurecdn.net/8URLqwFeJihbNpn3gByhg3.jpg"
+                bulbOnOffBtn.innerText = "Off"
+                isOn = true
+            }
+
+        }
+
+        bulbOnOffBtn.addEventListener("click" , bulbOnOff)
+
+    </script>
+</body>
+
+</html>
+
+<!-- This task in Two Buttons ON|Off -->
+
+<!-- <body class="">
+
+    <div>
+        <div class="w-30 m-auto">
+            <img id="bulbImg" src="https://m.media-amazon.com/images/I/51LWbha07VL._UF1000,1000_QL80_.jpg" alt="Images not Found">
+        </div>
+        <div class="flex flex-row justify-center">
+            <button id="bulbOnBtn" class="border border-black rounded-full px-2 py-2 hover:cursor-pointer">ON</button>
+            <button id="bulbOffBtn" class="border border-black rounded-full px-2 py-2 hover:cursor-pointer">OFF</button>
+        </div>
+    </div>
+
+    <script>
+
+        let bulbImg = document.getElementById("bulbImg")
+        let bulbOnBtn = document.getElementById("bulbOnBtn")
+        let bulbOffBtn = document.getElementById("bulbOffBtn")
+        
+        function bulbOn() {
+            console.log("Bulb On");
+            bulbImg.src = "https://cdn.mos.cms.futurecdn.net/8URLqwFeJihbNpn3gByhg3.jpg"
+        }
+
+        function bulbOff() {
+            console.log("Bulb Off");
+            bulbImg.src = "https://m.media-amazon.com/images/I/51LWbha07VL._UF1000,1000_QL80_.jpg"
+        }
+
+        bulbOnBtn.addEventListener("click" , bulbOn)
+        bulbOffBtn.addEventListener("click" , bulbOff)
+
+    </script>
+</body> -->
