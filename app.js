@@ -151,7 +151,7 @@
 // sessionStorage.clear()
 // sessionStorage.setItem('name' , 'abc')
 
-// =========================================
+// ================== Body Elements =======================
 
 // let body = document.body
 // let bodyEl = document.body.children
@@ -235,6 +235,133 @@
 // const c = 3
 // console.log(c);  // 3
 
+// ================== Problems [var, let and const] =======================
+
+// Reinitialized and Reassignable
+// var a = 0
+// a = 10
+// console.log(a);
+
+// var a = 0
+// var a = 10
+// console.log(a);
+
+// not Reinitialized and Reassignable
+// let a = 0
+// let a = 10
+// console.log(a); // Uncaught SyntaxError: Identifier 'a' has already been declared
+
+// let a = 0
+// a = 10
+// console.log(a);
+
+// not Reinitialized and not Reassignable
+// const a = 0
+// const a = 10
+// console.log(a); // Uncaught SyntaxError: Identifier 'a' has already been declared
+
+// const a = 0
+// a = 10
+// console.log(a); // Uncaught TypeError: Assignment to constant variable.
+
+// --------------------
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// var a = 1
+// let b = 2
+// const c = 3
+
+// --------------------
+
+// {
+//     var a = 1
+//     let b = 2
+//     const c = 3
+
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// --------------------
+
+// var a = 1
+// let b = 2
+// const c = 3
+
+// {
+    // var a = 4
+    // let b = 5
+    // const c = 6
+
+    // console.log(a);
+    // console.log(b);
+    // console.log(c);
+// }
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// --------------------
+
+// var name1 = "abc"
+
+// function name() {
+//     var name2 = "xyz"
+//     console.log(name2);
+// }
+
+// console.log(name1);
+// console.log(name2);
+
+// --------------------
+
+// let name1 = "abc"
+
+// function name() {
+//     let name2 = "xyz"
+//     console.log(name2);
+// }
+
+// console.log(name1);
+// console.log(name2);
+
+// --------------------
+
+// const name1 = "abc"
+
+// function name() {
+//     const name2 = "xyz"
+//     console.log(name2);
+// }
+
+// console.log(name1);
+// console.log(name2);
+
+// ============ Hoisting [apply: variables and Functions] ================
+
+// console.log(a); // undefined
+// var a = "name" 
+
+// --------------------
+
+// console.log(a); // Uncaught ReferenceError: Cannot access 'a' before initialization
+// let a = "name"
+
+// --------------------
+
+// console.log(a); // Uncaught ReferenceError: Cannot access 'a' before initialization
+// const a = "name"
+
+// =================== Ternery Operator ======================
+
+// let a = 1
+// let b = (a == 1 ? console.log("yes") : console.log("no"))
+
 // =================== Truty and falsy Values ======================
 
 // true (the Boolean primitive)
@@ -295,38 +422,272 @@
  
 // console.log(f); // Uncaught ReferenceError: f is not defined
 
-// =================== Ternery Operator ======================
-
-// let a = 1
-// let b = (a == 1 ? console.log("yes") : console.log("no"))
-
 // =================== While Loop ======================
 
-let a = 1
+// let a = 1
+// while (a <= 10) {
+//     console.log(a);
+//     a++
+// }
 
-while (a <= 10) {
-    console.log(a);
-    a++
-}
+// --------------------
 
-// =========================================
+// let b = 10
+// while (b >= 1) {
+//     console.log(b);
+//     b--
+// }
+
+// =================== Do While Loop ======================
+
+// let a = 1
+// do {
+//     console.log(a);
+//     a++
+// } while (a <= 10);
+
+// --------------------
+
+// let b = 10
+// do {
+//     console.log(b);
+//     b--
+// } while (b >= 1);
+
+// =================== Function passing in function ======================
+
+// function func1() {
+//     let a = 10
+//     func2(a)
+// }
+
+// function func2(e) {
+//     console.log(e);
+// }
+// func1()
+
+// ==================== Map, Filter and Reduce =====================
+
+// let names = ["name 1" , "name 2" , "name 3"]
+
+// use "in" all print array (index)
+// for (let name in names) {
+//     console.log(name);
+// }
+
+// --------------------
+
+// all names print
+// names.forEach(name => {
+//     console.log(name);
+// });
+
+// --------------------
+
+// all names reverse
+// console.log(names.reverse());
+
+// --------------------
+
+// use "map" all names print [map return array | copy array]
+// names.map((name) => {
+//     console.log(name);
+// })
+
+// --------------------
+
+// use "filter" greater than 80 all values print [found specific things use filter]
+// let data = [12,20,10,11,50,80,40,84,45,54, 90]
+
+// let values = data.filter((val) => {
+//     return val >= 80
+// })
+// console.log(values);
+
+// ==================== Template Literals =====================
+
+// let firstName = "abc"
+// let lastName = "xyz"
+
+// old method
+// let fullName = "your first name is " + firstName + " and last name is " + lastName
+// console.log(fullName);
+
+// --------------------
+
+// Modern Method
+// let fullName = `your first name is ${firstName} and last name is ${lastName}`
+// console.log(fullName);
+
+// ==================== Rest Parameters [...] =====================
+
+// [...] function ma ajaye to "Rest Operator"
+// obj, array and arr of obj ma ajaye to "Spread Operator" | use: copy karna
+
+// function num(a , b , ...rest) {
+//     // console.log(a , b);
+//     // console.log(arguments);
+//     // console.log(a , b , ...rest);
+// }
+// num(1 , 1 , 2 , 2)
+
+// --------------------
+
+// function num(a , b , ...rest) {
+//     let num = 0
+
+//     for (let key in rest) {
+//         num += rest[key]
+//     }
+
+//     console.log(a + b + num);
+// }
+// num(1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10)
+
+// --------------------
+
+// function num(...rest) {
+//     let num = 0
+
+//     for (let key in rest) {
+//         num += rest[key]
+//     }
+
+//     console.log(num);
+// }
+// num(1 , 2 , 3 , 4 )
+
+// ========== == Array Return [array itself object and return object] ============
+
+// let myArray = [1 , 2 , 3]
+// console.log(myArray);
+
+// =================== get .html file Elements ======================
+
+// console.log(document);
+// console.log(document.childNodes);
+// console.log(document.childNodes[0]);
+// console.log(document.childNodes[1].childNodes[0]);
+// console.log(document.childNodes[1].childNodes[0].childNodes);
+
+// let paraVal = document.childNodes[1].childNodes[2].childNodes[7].textContent
+// console.log(paraVal);
+
+// === Chilnodes & Parentnodes & ParentElement & NextSibling & PreviousSibling ===
+
+// ul[parent].li[node]
+// let ul = document.getElementById("ul")
+// console.log(ul.childNodes[1].textContent = "Contact");
+// console.log(ul.childNodes[3].textContent = "Email");
+
+// li[node].ul[parent]
+// let li = document.getElementById("li")
+// console.log(li);
+// console.log(li.parentElement);
+// console.log(li.parentNode);
+// console.log(li.parentElement.childNodes[3].textContent = "Contact");
+
+// childNodes & nextSibling
+// let ul = document.getElementById("ul")
+// console.log(ul.childNodes[1].textContent);
+// console.log(ul.childNodes[1].nextSibling.nextSibling.textContent);
+
+// childNodes & previousSibling
+// let ul = document.getElementById("ul")
+// console.log(ul.lastChild.previousSibling.textContent);
+
+// =================== Get all <p> Elements ======================
+
+// let allEl = document.getElementsByTagName("p")
+
+// for (let i = 0; i < allEl.length; i++) {
+//     allEl[i].style.color = "red"
+//     allEl[i].className = "p"
+//     allEl[i].id = "p"
+//     allEl[i].setAttribute("para" , "p")
+//     console.log(allEl[i]);
+// }
+
+// =================== typical Ques ======================
+
+// 1
+// let myArray = [1,2,3,4,5]
+// myArray[0] = 0
+
+// console.log(myArray); // 0,2,3,4,5
+
+// 2
+// let myArray = [1,2,3]
+// myArray = [4,5,6]
+// console.log(myArray);
+
+// 3
+// let arr1 = [1,2,3]
+// let arr2 = [4,5,6]
+// console.log(arr1);
+// console.log(arr2);
+
+// let mergeArr = [...arr1 , ...arr2]
+// console.log(mergeArr);
+
+// 4
+// let obj1 = {
+//     name: "ali"
+// }
+// let obj2 = {
+//     age: 18
+// }
+
+// let obj3 = {
+//     ...obj1,
+//     ...obj2,
+//     rollNo: 10
+// }
+
+// console.log(obj3);
+
+// 5
+// name() // name
+// function name() {
+//     console.log("name");
+// }
+
+// =================== Functions ======================
+
+// Normal | Traditional Function
+// function name() {
+//     console.log("name");
+// }
+// name()
+
+// Function Expression
+// let name = function () {
+//     console.log("name");
+// }
+// name()
+
+// Arrow Function
+// let name = () => {
+//     console.log("name");
+// }
+// name()
+
+// Modern Arrow Function
+// let name = () => console.log("name")
+// name()
+
+// Basic Calculator Functionality
+// let sum = (a , b) => a + b
+// let sub = (a , b) => a - b
+// let mul = (a , b) => a * b
+// let div = (a , b) => a / b
+// let mod = (a , b) => a % b
+
+// console.log(sum(2,2));
+// console.log(sub(2,2));
+// console.log(mul(2,2));
+// console.log(div(2,2));
+// console.log(mod(2,2));
 
 
-
-// =========================================
-
-
-
-// =========================================
-
-
-
-// =========================================
-
-
-
-// =========================================
-
-
-
-// =========================================
+// ===================  ======================
