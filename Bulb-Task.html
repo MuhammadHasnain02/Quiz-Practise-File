@@ -27,20 +27,53 @@
         let bulbOnOffBtn = document.getElementById("bulbOnOffBtn")
         let isOn = false
         
-        function bulbOnOff() {
+        // Normal | Traditional Function
+        // function bulbOnOff() {
 
-            if (isOn) {
-                bulbImg.src = "https://m.media-amazon.com/images/I/51LWbha07VL._UF1000,1000_QL80_.jpg"
-                bulbOnOffBtn.innerText = "On"
-                isOn = false
-            }
-            else {
-                bulbImg.src = "https://cdn.mos.cms.futurecdn.net/8URLqwFeJihbNpn3gByhg3.jpg"
-                bulbOnOffBtn.innerText = "Off"
-                isOn = true
-            }
+        //     if (isOn) {
+        //         bulbImg.src = "https://m.media-amazon.com/images/I/51LWbha07VL._UF1000,1000_QL80_.jpg"
+        //         bulbOnOffBtn.innerText = "On"
+        //         isOn = false
+        //     }
+        //     else {
+        //         bulbImg.src = "https://cdn.mos.cms.futurecdn.net/8URLqwFeJihbNpn3gByhg3.jpg"
+        //         bulbOnOffBtn.innerText = "Off"
+        //         isOn = true
+        //     }
 
-        }
+        // }
+
+        // Function Expression
+        // let bulbOnOff = function () {
+
+        //     if (isOn) {
+        //         bulbImg.src = "https://m.media-amazon.com/images/I/51LWbha07VL._UF1000,1000_QL80_.jpg"
+        //         bulbOnOffBtn.innerText = "On"
+        //         isOn = false
+        //     }
+        //     else {
+        //         bulbImg.src = "https://cdn.mos.cms.futurecdn.net/8URLqwFeJihbNpn3gByhg3.jpg"
+        //         bulbOnOffBtn.innerText = "Off"
+        //         isOn = true
+        //     }
+
+        // }
+
+        // Arrow Function
+        // let bulbOnOff = () => {
+
+        //     if (isOn) {
+        //         bulbImg.src = "https://m.media-amazon.com/images/I/51LWbha07VL._UF1000,1000_QL80_.jpg"
+        //         bulbOnOffBtn.innerText = "On"
+        //         isOn = false
+        //     }
+        //     else {
+        //         bulbImg.src = "https://cdn.mos.cms.futurecdn.net/8URLqwFeJihbNpn3gByhg3.jpg"
+        //         bulbOnOffBtn.innerText = "Off"
+        //         isOn = true
+        //     }
+
+        // }
 
         bulbOnOffBtn.addEventListener("click" , bulbOnOff)
 

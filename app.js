@@ -360,7 +360,7 @@
 // =================== Ternery Operator ======================
 
 // let a = 1
-// let b = (a == 1 ? console.log("yes") : console.log("no"))
+// let b = a == 1 ? console.log("yes") : console.log("no")
 
 // =================== Truty and falsy Values ======================
 
@@ -689,5 +689,1289 @@
 // console.log(div(2,2));
 // console.log(mod(2,2));
 
+// problems
+// 1
+// name()
+// function name() {
+//     console.log("name");
+// }
 
-// ===================  ======================
+// 2
+// name() // Uncaught TypeError: name is not a function
+// var name = function () {
+//     console.log("name");
+// }
+// name() // Uncaught ReferenceError: Cannot access 'name' before initialization
+// let name = function () {
+//     console.log("name");
+// }
+// name() // Uncaught ReferenceError: Cannot access 'name' before initialization
+// const name = function () {
+//     console.log("name");
+// }
+
+// 3
+// name() // Uncaught TypeError: name is not a function
+// var name = () => {
+//     console.log("name");
+// }
+// name() // Uncaught ReferenceError: Cannot access 'name' before initialization
+// let name = () => {
+//     console.log("name");
+// }
+// name() // Uncaught ReferenceError: Cannot access 'name' before initialization
+// const name = () => {
+//     console.log("name");
+// }
+
+// 4
+// name() // Uncaught TypeError: name is not a function
+// var name = () => console.log("name")
+// name() // Uncaught ReferenceError: Cannot access 'name' before initialization
+// let name = () => console.log("name")
+// name() // Uncaught ReferenceError: Cannot access 'name' before initialization
+// const name = () => console.log("name")
+
+// =========== Promises [Three Stages: Pending, Resolve & Reject] =============
+
+// 1 [basic]
+// let newProms = new Promise((resolve, reject) => {
+
+//     let a = 10
+//     if (a === 10) {
+//         resolve(`resolve => yes`)
+//     }
+//     else {
+//         reject(`reject => no`)
+//     }
+
+// })
+
+// newProms.then((data) => {
+//     console.log(data)
+// })
+// .catch((error) => {
+//     console.log(error)
+// })
+
+// 2 [Match Win | Loss Task]
+// let array = [true , false]
+// let won_loss = array[Math.floor( Math.random() * array.length )]
+
+// let match = new Promise((resolve, reject) => {
+
+//     if (won_loss === true) {
+//         resolve("Won")
+//     }
+//     else {
+//         reject("Loss")
+//     }
+
+// })
+
+// match.then((data) => {
+//     console.log(data)
+// })
+// .catch((error) => {
+//     console.log(error)
+// })
+
+// 3
+// let decide = [false , true];
+// let random = Math.floor(Math.random() * decide.length)
+// let decideMath = decide[random]
+
+// console.log(decideMath);
+// console.log(random);
+
+// =================== Destructuring [array , object] ======================
+
+// 1
+// let arr = [1,2,3]
+// let [a,b,c] = arr
+
+// console.log([a,b,c]);
+
+// 2
+// const obj = {
+//     name1: "name",
+//     age: 18,
+//     arr: [1 , "abc" , true]    
+// }
+// console.log(obj);
+
+// const { name1 , age , arr } = obj
+// console.log({ name1 , age , arr });
+
+// const [a,b,c] = obj.arr
+// console.log([a,b,c]);
+
+// =================== practise ======================
+
+// const isTrue = true == [];
+// const isFalse = true == ![];
+// console.log(isTrue + isFalse);
+
+// -----------------------------
+
+// console.log(String.raw`HelloTwitter\nworld`);
+
+// -----------------------------
+
+// console.log(typeof typeof 1);
+
+// -----------------------------
+
+// console.log(false == '0');
+
+// -----------------------------
+
+// console.log("This is a string." instanceof String);
+
+// -----------------------------
+
+// console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());
+
+// -----------------------------
+
+// const numbers = [33, 2, 8];
+// console.log(numbers);
+
+// numbers.sort();
+// console.log(numbers);
+
+// console.log(numbers[1])
+
+// -----------------------------
+
+// console.log(3 > 2);
+// console.log(2 > 1);
+            // true > true
+// console.log(3 > 2 > 1);
+
+// -----------------------------
+
+// console.log("2" + "2");
+// console.log(1 +  "22");
+// console.log(1 +  "2" + "2");
+
+// -----------------------------
+
+// console.log(typeof String);
+// console.log(typeof Number);
+// console.log(typeof undefined);
+// console.log(typeof null);
+// console.log(typeof NaN);
+
+// -----------------------------
+
+// console.log("1" + 1);
+
+// -----------------------------
+
+// console.log(Math.min( 5 , 10 , 2 ));
+
+// -----------------------------
+
+// let x = 10;
+// x += 5;
+// console.log(x);
+
+// =================== Fetch Data ======================
+
+// 1
+// fetch("https://jsonplaceholder.typicode.com/photos")
+// .then((data) => data.json())
+
+// .then((response) => console.log(response))
+// .catch((error) => console.log(error))
+
+// 2 [another person api used]
+// fetch("https://newsapi.org/v2/everything?q=tesla&from=2025-09-08&sortBy=publishedAt&apiKey=c7e2ae91f23749758991d2692e467bc9")
+// .then((data) => data.json())
+
+// .then((response) => console.log(response))
+// .catch((error) => console.log(error))
+
+// =================== Even or Odd Program ======================
+
+// for (let i = 0; i <= 50; i++) {
+
+//     if (i % 2 === 0) {
+//         console.log("even => " , i);
+//     } else {
+//         console.log("odd => " , i);
+//     }
+    
+// }
+
+// =================== inc | dec problems ======================
+
+// 1
+// let a = 3
+// let b = 2
+
+// let res = a + b * b + a +  ( b-2 ) 
+// //        3 + 2 * 2 + 3 +    b=0
+// //        3 +   4   + 3 +     0
+// //                 10 ans
+// console.log(res);
+
+// -----------------------------
+
+// 2
+// let a = 3
+// let b = 2
+
+// -----------------------------
+
+// let res = a++ + ++b * ++b + a-- + ( b++ - 2 )
+// //         3  +  3  *  4  +  4  +  ( 4 - 2 )
+// //         3  +     12    +  4  +    2 
+// //                      21 ans
+
+// console.log("res => " , res);
+
+// -----------------------------
+
+// 3
+// let a = 3 + "hello" + true + 0 && false
+// //       " 3hello " + tr + fal && false
+// //                 false       && false
+// //                       false ans
+// console.log(a);
+
+// -----------------------------
+
+// 4
+// let a = 3
+// let b = 2
+
+// -----------------------------
+
+// let res = 4 === "4" && true ( 3 > 2 ) || false && undefined
+// //           true   && true ( true  ) || false && undefined
+// //                           true     || false && undefined
+// //                                        true && undefined
+// //                                            false ans
+
+// console.log(res);
+
+// =================== Object.freeze() vs Object.seal() ======================
+
+// 1
+// let user = {
+//   name: "Ali",
+//   age: 22
+// };
+
+// console.log("user => " , user);
+
+// Object.freeze(user);
+
+// user.name = "Hasnain"; // ❌ Cannot modify
+// user.city = "Lahore";  // ❌ Cannot add
+// delete user.age;       // ❌ Cannot delete
+
+// console.log("Modified User => " , user);
+
+// -----------------------------
+
+// 2
+// let car = {
+//   brand: "Toyota",
+//   color: "Red"
+// };
+
+// console.log("Obj car => " , car);
+
+// Object.seal(car);
+
+// car.color = "Black"; // ✅ Can modify existing property
+// car.year = 2024;     // ❌ Cannot add new property
+// delete car.brand;    // ❌ Cannot delete property
+
+// console.log("Modified Obj car => " , car);
+
+// ====== Primitive Data Type s & Non-Primitive Data Types (Reference Types) ======
+
+// 1. Primitive Data Types
+// Primitive types are simple and immutable (unchangeable) values.
+// They are stored directly in memory.
+
+// List of Primitive Types:
+// String
+// Number
+// Boolean
+// Undefined
+// Null
+// BigInt
+// Symbol
+
+// Example:
+// let name = "Hasnain";   // String
+// let age = 20;            // Number
+// let isActive = true;     // Boolean
+// let country;             // Undefined
+// let empty = null;        // Null
+// let bigNum = 123456789012345678901234567890n; // BigInt
+// let id = Symbol("id");   // Symbol
+
+// console.log(name, age, isActive, country, empty, bigNum, id);
+
+// 🔍 Explanation:
+
+// These values are copied by value (not by reference).
+// Jab aap ek variable dusre me assign karte ho, nayi copy banti hai.
+
+// let a = 10;
+// let b = a;
+// b = 20;
+// console.log(a); // 10 (unchanged)
+
+// Primitive values simple aur fixed hote hain. Jab unhe copy karte ho, asli value change nahi hoti, sirf copy banti hai.
+
+// -----------------------------
+
+// 2. Non-Primitive Data Types (Reference Types)
+// Non-primitive types are objects, stored by reference.
+// That means variable doesn’t store value directly, it stores a reference (address) of the data.
+
+// List of Non-Primitive Types:
+// Object
+// Array
+// Function
+// Date
+// RegExp
+// (basically everything that’s not primitive)
+
+// Example:
+// let person = { name: "Ali", age: 25 };  // Object
+// let numbers = [1, 2, 3];                // Array
+// function greet() { console.log("Hello!"); } // Function
+
+// console.log(person, numbers)
+
+// 🔍 Behavior Example:
+// let obj1 = { city: "Lahore" };
+// let obj2 = obj1;
+// obj2.city = "Karachi";
+
+// console.log(obj1.city); // Karachi
+
+// Non-primitive data type
+// copy by reference hota hai, matlab dono variable same memory location ko point karte hain.
+// Agar ek me change karo to dusra bhi change ho jata hai.
+
+// =========== Most Common Array Methods in JavaScript ===========
+
+// 1. push()
+// Adds one or more elements to the end of an array.
+// let fruits = ["Apple", "Banana"];
+// fruits.push("Mango");
+// console.log(fruits); // ["Apple", "Banana", "Mango"]
+
+// -----------------------------
+
+// 2. pop()
+// Removes the last element from an array.
+
+// let fruits = ["Apple", "Banana", "Mango"];
+// fruits.pop();
+// console.log(fruits); // ["Apple", "Banana"]
+
+// -----------------------------
+
+// 3. unshift()
+// Adds one or more elements to the start of the array.
+
+// let fruits = ["Banana", "Mango"];
+// fruits.unshift("Apple");
+// console.log(fruits); // ["Apple", "Banana", "Mango"]
+
+// -----------------------------
+
+// 4. shift()
+// Removes the first element from the array.
+
+// let fruits = ["Apple", "Banana", "Mango"];
+// fruits.shift();
+// console.log(fruits); // ["Banana", "Mango"]
+
+// -----------------------------
+
+// 5. concat()
+// Joins two or more arrays together.
+
+// let a = [1, 2];
+// let b = [3, 4];
+// let result = a.concat(b);
+// console.log(result); // [1, 2, 3, 4]
+
+// -----------------------------
+
+// 6. slice()
+// Returns a portion of the array without changing the original.
+
+// let nums = [10, 20, 30, 40, 50];
+// let part = nums.slice(1, 4);
+// console.log(part); // [20, 30, 40]
+
+// -----------------------------
+
+// 7. splice()
+// Adds or removes elements in place (changes original array).
+
+// let nums = [10, 20, 30, 40];
+// nums.splice(2, 1, 99); // remove 1 at index 2, add 99
+// console.log(nums); // [10, 20, 99, 40]
+
+// -----------------------------
+
+// 8. indexOf()
+// Finds the index of a value.
+
+// let fruits = ["Apple", "Mango", "Banana"];
+// console.log(fruits.indexOf("Mango")); // 1
+
+// -----------------------------
+
+// 9. includes()
+// Checks if the array contains a value.
+
+// let fruits = ["Apple", "Banana"];
+// console.log(fruits.includes("Banana")); // true
+
+// -----------------------------
+
+// 10. forEach()
+// Runs a function on each element of the array.
+
+// let nums = [1, 2, 3];
+// nums.forEach((n) => console.log(n * 2)); // 2, 4, 6
+
+// -----------------------------
+
+// 11. map()
+// Creates a new array by transforming each element.
+
+// let nums = [1, 2, 3];
+// let doubled = nums.map(n => n * 2);
+// console.log(doubled); // [2, 4, 6]
+
+// -----------------------------
+
+// 12. filter()
+// Returns a new array with elements that match a condition.
+
+// let nums = [10, 25, 30, 5];
+// let result = nums.filter(n => n > 10);
+// console.log(result); // [25, 30]
+
+// -----------------------------
+
+// 13. find()
+// Returns the first element that matches a condition.
+
+// let nums = [10, 20, 30];
+// let result = nums.find(n => n > 15);
+// console.log(result); // 20
+
+// -----------------------------
+
+// 14. reduce()
+// Combines all array values into a single result (e.g., sum).
+
+// let nums = [1, 2, 3, 4];
+// let sum = nums.reduce((acc, cur) => acc + cur, 0);
+// console.log(sum); // 10
+
+// -----------------------------
+
+// 15. sort()
+// Sorts the array (alphabetically or numerically).
+
+// let nums = [40, 10, 30, 20];
+// nums.sort((a, b) => a - b);
+// console.log(nums); // [10, 20, 30, 40]
+
+// -----------------------------
+
+// 16. reverse()
+// Reverses the order of elements.
+
+// let nums = [1, 2, 3];
+// nums.reverse();
+// console.log(nums); // [3, 2, 1]
+
+// -----------------------------
+
+// 17. join()
+// Joins all array elements into a single string.
+
+// let fruits = ["Apple", "Banana", "Mango"];
+// let text = fruits.join(" - ");
+// console.log(text); // "Apple - Banana - Mango"
+
+// -----------------------------
+
+// 18. every() & some()
+// Checks conditions on all or some elements.
+
+// let nums = [2, 4, 6];
+// console.log(nums.every(n => n % 2 === 0)); // true (all even)
+// console.log(nums.some(n => n > 5));        // true (some greater than 5)
+
+// ============= Multidimensional Arrays ===============
+
+// What is a Multidimensional Array?
+// A multidimensional array means — an array inside another array.
+// Basically, ek array ke andar multiple arrays nested hote hain.
+
+// 1
+// Example:
+// let numbers = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+
+// console.log(numbers);
+
+// Here:
+// numbers[0] → [1, 2, 3]
+// numbers[1] → [4, 5, 6]
+// numbers[2] → [7, 8, 9]
+
+// Yani yeh ek “table” jaisa structure ban jata hai — rows aur columns ke form me.
+
+// -----------------------------
+
+// 2
+// Accessing Elements
+// You can access elements using two indexes:
+// First index → which array (row)
+// Second index → which element inside that array (column)
+
+// Example:
+// let numbers = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+
+// console.log(numbers[0][0]); // 1
+// console.log(numbers[1][2]); // 6
+// console.log(numbers[2][1]); // 8
+
+// numbers[1][2] ka matlab hai “dusre array ka teesra element”.
+
+// -----------------------------
+
+// 3 [Modify Elements]
+// let numbers = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+
+// numbers[0][1] = 99;
+// console.log(numbers[0]); // [1, 99, 3]
+// Simple index ke zariye aap value change kar sakte ho.
+
+// -----------------------------
+
+// 4 [ Loop Through a 2D Array]
+// Using for loop:
+// let numbers = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+
+// for (let i = 0; i < numbers.length; i++) {
+
+//   for (let j = 0; j < numbers[i].length; j++) {
+//     console.log(numbers[i][j]);
+//   }
+  
+// }
+
+// Outer loop rows ke liye, inner loop columns ke liye hota hai.
+// Is tarah aap har element ko access kar sakte ho.
+
+// -----------------------------
+
+// 5 [Real-World Example: Matrix or Table]
+// let matrix = [
+//   ["Ali", 90],
+//   ["Hasnain", 85],
+//   ["Zain", 95]
+// ];
+
+// console.log(matrix[1][0]); // "Hasnain"
+// console.log(matrix[2][1]); // 95
+// Aap is tarah data ko row-column format me store kar sakte ho — jaise marks table.
+
+// -----------------------------
+
+// 6 [3D Array (Array inside array inside array)]
+// let cube = [
+//   [
+//     [1, 2],
+//     [3, 4]
+//   ],
+//   [
+//     [5, 6],
+//     [7, 8]
+//   ]
+// ];
+
+// console.log(cube[0][1][1]); // 4
+// console.log(cube[1][0][1]); // 6
+
+// ========= Right Way to Copy Objects and Arrays | Deep Vs Shallow Copy =========
+
+// What’s the Real Issue?
+// In JavaScript, objects and arrays are non-primitive (reference types).
+// When you copy them with =, you’re not making a new copy — you’re copying the reference (memory address).
+
+// let obj1 = { name: "Ali" };
+// let obj2 = obj1;
+
+// obj2.name = "Hasnain";
+
+// console.log(obj1.name); // "Hasnain"
+
+// ========= 1. Shallow Copy =========
+// A shallow copy means: sirf outer layer copy hoti hai, lekin andar ke nested object same reference rakhte hain.
+
+// -----------------------------
+
+// Shallow Copy of Object
+// let user = {
+//     name: "Ali",
+//     address: { city: "Lahore" }
+// }
+// let copyUser = {
+//     ...user // Spread operator
+// }
+
+// copyUser.name = "Hasnain";          // ✅ only copy changes
+// copyUser.address.city = "Karachi";  // ⚠ affects original too
+
+// console.log(user.name); // "Ali"
+// console.log(copyUser.name); // "Hasnain"
+
+// console.log(user.address.city); // "Karachi"
+// console.log(copyUser.address.city); // "Karachi"
+
+// -----------------------------
+
+// Shallow Copy of Array
+// let arr = [1, 2, [3, 4]];
+// let copyArr = [...arr];
+
+// copyArr[0] = 99;        // ✅ only copy changes
+// copyArr[2][0] = 100;    // ⚠ changes original nested array
+
+// console.log(arr); // [1, 2, [100, 4]]
+// console.log(copyArr); // [1, 2, [100, 4]]
+
+// ========= 2. Deep Copy =========
+// A deep copy copies everything — including nested objects and arrays — completely independent.
+
+// -----------------------------
+
+// Deep Copy using JSON.parse(JSON.stringify()):
+// let user = { name: "Ali", address: { city: "Lahore" } };
+// let deepCopy = JSON.parse(JSON.stringify(user));
+
+// deepCopy.address.city = "Karachi";
+
+// console.log(user.address.city); // "Lahore" ✅ (no effect)
+// console.log(deepCopy.address.city); // "Karachi" ✅ (no effect)
+
+// -----------------------------
+
+// Deep Copy using structuredClone() (Modern & Best)
+// let user = { name: "Ali", address: { city: "Lahore" } };
+// let deepCopy = structuredClone(user);
+
+// deepCopy.address.city = "Karachi";
+
+// console.log(user.address.city); // "Lahore" ✅
+// console.log(deepCopy.address.city); // "Karachi" ✅
+
+// ======== Combined Assignment | Increment and Decrement Operator ==========
+
+// ------ 1. Combined (Compound) Assignment Operators ----------
+// These operators are shortcuts for doing an operation and assignment together.
+// Instead of writing long expressions, we can combine both.
+
+// -------- Example Code ---------
+// let x = 10;
+
+// x += 5;  // x = 15
+// x -= 3;  // x = 12
+// x *= 2;  // x = 24
+// x /= 4;  // x = 6
+// x %= 4;  // x = 2
+// x **= 3; // x = 8
+
+// console.log(x);
+
+// Ye operators basically shortcut hain. Agar aap x = x + 5 likh rahe ho, to uski jagah sirf x += 5 likh sakte ho — simple aur readable.
+
+// ------ 2. Increment and Decrement Operators ----------
+
+// -------- Example Code ---------
+// let a = 5;
+
+// a++; // Post-increment
+// console.log("Post-increment => " , a); // 6
+
+// a--; // Post-decrement
+// console.log("Post-decrement => " , a); // 5
+
+// -----------------------------
+
+// let x = 5;
+
+// console.log(x++); // 5 (use first, then increase)
+// console.log(x);   // 6
+
+// console.log(++x); // 7 (increase first, then use)
+// console.log(x);   // 7
+
+// ======== While Loop in JavaScript — Explained in Depth ==========
+
+// ✅ What it is (short)
+// A while loop repeatedly runs a block of code as long as a condition stays true.
+// Use it when the number of iterations is not known beforehand or when you wait for a condition to change.
+
+// 🔧 Syntax
+// while (condition) {
+//   // statements to execute while condition is true
+// }
+
+// 1) Basic example — count 1 to 5
+// let i = 1;
+// while (i <= 5) {
+//   console.log(i); // prints 1,2,3,4,5
+//   i++;             // important: update the counter
+// }
+
+
+// Step-by-step
+// Initialize a counter i = 1.
+// Check condition i <= 5.
+// If true → run body (console.log(i)).
+// After body → execute i++.
+// Repeat until condition becomes false.
+
+// 2) do...while (runs body at least once)
+// let j = 1;
+// do {
+//   console.log(j);
+//   j++;
+// } while (j <= 5);
+
+// do...while pehle body chala ke phir condition check karta hai — isliye body kam az kam ek dafa zaroor chalti hai.
+
+// 3) Iterating an array with while
+// let arr = ["a", "b", "c"];
+// let idx = 0;
+// while (idx < arr.length) {
+//   console.log(arr[idx]);
+//   idx++;
+// }
+
+// Useful when you need manual control of the index (or when you modify index inside loop).
+
+// 4) Queue / stream processing pattern
+// let queue = [1, 2, 3, 4];
+// while (queue.length) { // same as while (queue.length > 0)
+//   const item = queue.shift(); // remove first item
+//   console.log("processing", item);
+// }
+
+// while pairs nicely with shift()/pop() for FIFO/LIFO processing.
+
+// 5) Avoiding infinite loops — common pitfall
+// // BAD: infinite loop (no update or break)
+// while (true) {
+//   // nothing that makes condition false — this will never end
+// }
+
+// // SAFE: add a break condition or update
+// let count = 0;
+// while (true) {
+//   if (count >= 10) break;
+//   console.log(count);
+//   count++;
+// }
+
+// Always ensure the loop has a way to finish (counter update, state change, or break).
+
+// 6) break and continue
+// let n = 0;
+// while (n < 10) {
+//   n++;
+//   if (n % 2 === 0) continue; // skip even numbers
+//   if (n > 7) break;          // stop when number > 7
+//   console.log(n);            // prints odd numbers up to 7: 1,3,5,7
+// }
+
+// continue → skip current iteration and go to next condition check
+// break → exit the loop immediately
+
+// 7) Nested while (2D matrix)
+// let matrix = [
+//   [1,2,3],
+//   [4,5,6],
+//   [7,8,9]
+// ];
+
+// let r = 0;
+// while (r < matrix.length) {
+//   let c = 0;
+//   while (c < matrix[r].length) {
+//     console.log(matrix[r][c]);
+//     c++;
+//   }
+//   r++;
+// }
+
+// 8) When to use while vs for vs do...while
+// Use for when you know number of iterations (counter-based).
+// Use while when iteration depends on a condition that changes over time (e.g., reading from stream, waiting for user input).
+// Use do...while when you must run body at least once before checking condition.
+
+// 9) Best practices & performance tips
+// Always make sure loop condition will become false eventually — prevent infinite loops.
+// Keep loop body minimal; heavy work inside loops hurts performance.
+// Prefer array iteration helpers (for...of, forEach, map) when they make code clearer.
+// Use while for condition-driven processing (queues, streaming, polling).
+// Avoid modifying the collection being iterated in surprising ways; if you must mutate, be careful with indexes.
+
+// 10) Quick checklist before writing a while loop
+//  Is condition well-defined and will it become false?
+//  Is there an update to state or counter inside the loop?
+//  Do I need break or continue?
+//  Could a for or for...of be clearer?
+// My-Language Explanation (Roman Urdu, English letters — at least 5 lines)
+
+// While loop tab use karo jab aapko pata nahin hota ke kitni dafa code chalna hai aur condition pe depend ho.
+// Har dafa loop start se pehle condition check hoti hai; agar condition true hai to body chalti hai.
+// Loop ke andar koi aisi cheez update karo jo ant me condition ko false banaye, warna infinite loop ban jayega.
+// Agar body ko kam az kam ek martaba chalana hai to do...while better hai kyun ke wo pehle chalta hai phir condition check karta hai.
+// For loop zyada seedha hota jab counter-based iteration chahiye, lekin while tab powerful hai jab condition dynamic ho.
+// Break se loop turant band kar sakte ho, aur continue se current iteration skip kar ke agla iteration start hota hai.
+// Queues ya streams process karne ke liye while(queue.length) bohot useful pattern hai.
+
+// Practice Tasks (try these in console)
+// Write a while loop that prints all prime numbers less than 50.
+// Use while to reverse a string by popping characters from an array.
+// Implement a simple retry-loop: try an async function up to 5 times using while and break on success.
+
+// ======== Introduction to Functions
+// & the return Keyword in JavaScript — Explained in Depth ==========
+
+// ### ✅ Quick idea
+
+// A **function** is a reusable block of code that performs a task. The `return` keyword **exits** the function and optionally **gives back a value** to the caller.
+
+// ---
+
+// ## 1. Function Declaration (named)
+
+// ```js
+// function greet(name) {
+//   return `Hello, ${name}!`;
+// }
+
+// console.log(greet("Hasnain")); // "Hello, Hasnain!"
+// ```
+
+// ---
+
+// ## 2. Function Expression (anonymous assigned to a variable)
+
+// ```js
+// const greet = function(name) {
+//   return `Hello, ${name}!`;
+// };
+// console.log(greet("Ali"));
+// ```
+
+// ---
+
+// ## 3. Arrow Function (short syntax)
+
+// ```js
+// // concise (implicit return)
+// const add = (a, b) => a + b;
+// console.log(add(2, 3)); // 5
+
+// // block body (explicit return)
+// const square = n => {
+//   return n * n;
+// };
+// console.log(square(4)); // 16
+// ```
+
+// ---
+
+// ## 4. Parameters, Default Values, and Rest
+
+// ```js
+// function multiply(a, b = 1) {
+//   return a * b;
+// }
+// console.log(multiply(5)); // 5
+
+// function sum(...nums) {
+//   return nums.reduce((acc, n) => acc + n, 0);
+// }
+// console.log(sum(1, 2, 3, 4)); // 10
+// ```
+
+// ---
+
+// ## 5. `arguments` object (not available in arrow functions)
+
+// ```js
+// function showArgs() {
+//   console.log(arguments); // array-like object
+// }
+// showArgs("a", "b", 3);
+// ```
+
+// ---
+
+// ## 6. `return` behavior — basics
+
+// ```js
+// function noReturn(x) {
+//   console.log(x);
+// }
+// console.log(noReturn("Hello")); // logs "Hello", then prints undefined
+
+// function withReturn(x) {
+//   return x;
+// }
+// console.log(withReturn("Hello")); // "Hello"
+// ```
+
+// * If no `return` used → function returns `undefined`.
+// * `return` also **immediately exits** the function.
+
+// ---
+
+// ## 7. Early return (guard clause)
+
+// ```js
+// function divide(a, b) {
+//   if (b === 0) return null; // stop early for bad input
+//   return a / b;
+// }
+// console.log(divide(10, 2)); // 5
+// console.log(divide(10, 0)); // null
+// ```
+
+// ---
+
+// ## 8. Returning objects/arrays/functions
+
+// ```js
+// function createUser(name) {
+//   return { name, createdAt: Date.now() };
+// }
+// console.log(createUser("Ali"));
+
+// function makeMultiplier(x) {
+//   return function(y) { return x * y; };
+// }
+// const double = makeMultiplier(2);
+// console.log(double(7)); // 14
+// ```
+
+// ---
+
+// ## 9. Pure vs Impure functions (side effects)
+
+// ```js
+// // pure
+// function add(a, b) {
+//   return a + b;
+// }
+
+// // impure (mutates external state)
+// let total = 0;
+// function addToTotal(n) {
+//   total += n; // side-effect
+//   return total;
+// }
+// ```
+
+// * Prefer **pure** functions for predictability and easy testing.
+
+// ---
+
+// ## 10. Recursion example (using return)
+
+// ```js
+// const factorial = n => {
+//   if (n <= 1) return 1;         // base case (early return)
+//   return n * factorial(n - 1); // recursive return
+// };
+// console.log(factorial(5)); // 120
+// ```
+
+// ---
+
+// ## 11. Common pitfalls & tips
+
+// * Arrow functions do **not** have their own `arguments` or `this` — use regular functions when you need those.
+// * Don’t rely on implicit `undefined` — use explicit `return` for clarity.
+// * Avoid mutating parameters; return new objects/arrays instead.
+// * Use **early returns (guard clauses)** to make logic simpler and reduce nesting.
+// * Name functions clearly: `getTotal`, `formatDate`, `isPrime` — readable code wins.
+
+// ---
+
+// ## 12. Practical mini-examples (one-liners & patterns)
+
+// ```js
+// // Compose small functions
+// const toNum = s => Number(s);
+// const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+// // Higher-order: map builder
+// const mapWith = fn => arr => arr.map(fn);
+// const times2 = mapWith(x => x * 2);
+// console.log(times2([1,2,3])); // [2,4,6]
+// ```
+
+// ---
+
+// ## Summary — short bullets
+
+// * Function = reusable piece of code; can be declared many ways.
+// * `return` sends a value back and ends the function immediately.
+// * No `return` → `undefined`.
+// * Use defaults, rest params, and pure functions for safer code.
+// * Early `return` (guard clause) makes functions easier to read.
+
+// ---
+
+// ## My-Language Explanation (English written with Urdu sentence structure — at least 5 lines)
+
+// Functions ek chhota program ka tukda hota hai jo kaam kar deta hai jab aap use call karo.
+// `return` ka matlab hai function se nikal kar koi value wapas dena — aur `return` likhte hi function ruk jata hai.
+// Agar `return` nahin likha to function `undefined` return karega, isliye jab value chahiye ho to explicit return karo.
+// Arrow functions short aur useful hain callbacks ke liye, lekin agar `arguments` ya apna `this` chahiye to normal function use karo.
+// Best practice yeh hai ke functions pure rakhon — matlab same input pe same output, aur bahar ka state change na karo.
+// Early return (guard clause) laga do taake nested ifs kam ho aur code clean nazar aaye.
+
+// ---
+
+// If you want, I can now:
+
+// * provide **10 practice tasks** (with increasing difficulty), or
+// * show **visual diagrams** for call/return flow, or
+// * produce a **cheat-sheet** PDF of common function patterns — tell me which one you want next.
+
+// ======== Execution Context in JavaScript — Explained in Depth ==========
+
+// Quick summary
+
+// An execution context (EC) is the environment where JavaScript code is evaluated and executed. Every time code runs (global code, a function call, or eval) the engine creates an execution context. An EC contains the information the engine needs: scope chain, variable/lexical environment, this binding, and how to resolve identifiers.
+
+// 1 — The three main types of execution context
+// Global Execution Context (GEC)
+// Created when the program starts. It creates the global object (globalThis, window in browsers) and a global lexical environment. There is exactly one global context per program.
+// Function Execution Context (FEC)
+// Created every time a function is invoked. Each call creates a new FEC with its own local variables and parameters.
+// Eval Execution Context (rare)
+// Created when code runs via eval() (not commonly recommended).
+// 2 — Life cycle: Creation (Setup) phase vs Execution phase
+
+// When an EC is created, engines conceptually do two phases:
+
+// Creation phase (what happens before code runs)
+// Create a new Lexical Environment (LE) for the context.
+// Create the Variable Environment / Environment Record (where variables, function declarations, and parameters are registered).
+// Hoist declarations:
+// Function declarations are hoisted and assigned the function object.
+// var declarations are hoisted and initialized to undefined.
+// let and const are not initialized yet — they enter the Temporal Dead Zone (TDZ) until their lexical initialization.
+// Determine this binding for that context (based on call site).
+// Create the arguments object for non-arrow functions.
+
+// After creation, the engine executes the code — initializations, assignments, expressions, function bodies, etc.
+
+// 3 — Lexical Environment, Environment Record & Scope Chain
+// A Lexical Environment is a specification type consisting of:
+// Environment Record: actual map of identifier -> value.
+// Outer reference: link to the parent lexical environment (its outer scope).
+// The scope chain is how identifier lookup is performed: current LE → outer → outer → ... → global.
+// This structure is what allows closures: a function retains a reference to the lexical environment where it was created, even if called later.
+// 4 — Hoisting & Temporal Dead Zone (TDZ)
+// Hoisting is the conceptual move of declarations to the top of their scope during creation phase.
+// var is hoisted and set to undefined immediately.
+// console.log(a); // undefined
+// var a = 10;
+
+// Function declarations are hoisted with their function object:
+// console.log(foo()); // "hello"
+// function foo(){ return "hello"; }
+
+// let/const are hoisted into the scope but are uninitialized — accessing them before declaration throws ReferenceError (TDZ).
+// console.log(x); // ReferenceError
+// let x = 5;
+
+// 5 — this binding rules (how this is determined)
+
+// this is resolved at call-time (not lexical), except for arrow functions.
+
+// Default binding: plain function call — in non-strict mode this → global object, in strict mode this → undefined.
+// Implicit binding: obj.method() → this is obj.
+// Explicit binding: fn.call(obj) / fn.apply(obj) / fn.bind(obj) → this is obj (or bound permanently in case of bind).
+// new binding (constructor): new Fn() → this is the newly created object.
+// Arrow functions: no own this; they inherit this lexically from the enclosing execution context.
+
+// Example:
+
+// const obj = {
+//   x: 10,
+//   getX() { return this.x; }
+// };
+// obj.getX(); // 10  (implicit binding)
+
+// function f(){ return this; }
+// f(); // globalThis or undefined in strict mode
+
+// const arrow = () => this;
+// arrow(); // inherits `this` from outer scope
+
+// 6 — Call stack & execution order
+// The engine keeps an execution (call) stack. When a context is created (e.g., function invoked), it is pushed onto the stack. When function returns, its EC is popped.
+// Example (stack frames):
+// Global EC (bottom)
+// → functionA EC (pushed when called)
+// → functionB EC (pushed when functionA calls functionB)
+// pop functionB, resume functionA, pop functionA → back to Global EC
+
+
+// Recursive functions illustrate stack growth; an uncapped recursion leads to stack overflow.
+
+// 7 — Closures (how EC enables closures)
+
+// A closure is when a function remembers the lexical environment where it was created.
+
+// Example:
+
+// function makeCounter() {
+//   let count = 0; // stored in lexical environment of makeCounter call
+//   return function() {
+//     count++;
+//     return count;
+//   };
+// }
+// const c = makeCounter();
+// console.log(c()); // 1
+// console.log(c()); // 2
+
+// The returned function keeps a reference to count's environment even after makeCounter returns. That environment stays alive as long as references exist (prevents GC).
+// 8 — Block scope, function scope, and ES6 behavior
+// var is function-scoped (or global if declared outside a function).
+// let and const are block-scoped (between {}).
+// Each block with let/const creates its own lexical environment for that block — explains why for loop closures behave differently with let.
+
+// Example:
+
+// for (let i = 0; i < 3; i++){
+//   setTimeout(() => console.log(i), 0); // logs 0,1,2
+// }
+// for (var j = 0; j < 3; j++){
+//   setTimeout(() => console.log(j), 0); // logs 3,3,3 (var shared)
+// }
+
+// 9 — Execution context & asynchronous code (event loop)
+// JavaScript runs on a single thread for JS execution. The call stack processes ECs.
+// Asynchronous events (timers, I/O, user events, promise microtasks) schedule callbacks:
+// When a callback is dequeued, a new EC is created for that function and pushed onto the call stack.
+// Microtasks (Promises) run after current task but before the next macrotask.
+// Understanding EC + call stack + event loop explains why long-running synchronous code blocks UI and why asynchronous callbacks execute later.
+// 10 — Memory, garbage collection & ECs
+// Lexical environments are objects that live as long as something references them (closures, global refs).
+// Once no references to a lexical environment are reachable from root objects (e.g., global), it becomes eligible for garbage collection.
+// Common memory leak patterns:
+// Unremoved global references
+// DOM nodes kept in closures or arrays
+// Timers and event listeners not cleared
+// 11 — Practical examples & pitfalls
+// Hoisting & TDZ example
+// console.log(func()); // works — function declaration hoisted
+
+// function func(){ return "hi"; }
+
+// console.log(aVar); // undefined (var hoisted)
+// var aVar = 2;
+
+// console.log(aLet); // ReferenceError (TDZ)
+// let aLet = 3;
+
+// Closure pitfall (capturing loop variable)
+// var funcs = [];
+// for (var i = 0; i < 3; i++) {
+//   funcs[i] = function(){ console.log(i); };
+// }
+// funcs[0](); // 3  (because var i is 3 after loop)
+
+
+// Fix with let:
+
+// for (let i = 0; i < 3; i++) {
+//   funcs[i] = () => console.log(i); // logs 0,1,2
+// }
+
+// this pitfalls with callbacks
+// const obj = { x: 1, getX(){ return this.x } };
+// setTimeout(obj.getX, 0); // lost `this` → undefined or global
+// // bind or wrap to preserve `this`:
+// setTimeout(() => console.log(obj.getX()), 0);
+
+// 12 — Best practices / rules of thumb
+// Prefer const and let over var to avoid hoisting/TDZ surprises.
+// Keep functions small and pure where possible to reduce unexpected closures and side effects.
+// Avoid polluting global scope — minimize global variables.
+// When using this, be explicit: prefer call/apply/bind or arrow functions if you want lexical this.
+// Clean up event listeners, timers, and references when no longer needed to avoid memory leaks.
+// 13 — Short checklist to reason about an execution context
+// Which context is this? Global, function, or eval?
+// What declarations are hoisted in the creation phase?
+// Is there a TDZ (let/const) that could throw a ReferenceError?
+// What is the this binding for this call-site?
+// Does this function form a closure capturing outer variables (so they won't be GC'd)?
+// Will async callbacks create new ECs later — are there this or scope assumptions that might break?
+// Practice tasks (try in console)
+// Write a function that returns an array of functions, each logging its index correctly (no 3,3,3 problem).
+// Demonstrate TDZ by trying to read a let variable before declaration.
+// Create a closure that stores data across calls (e.g., counter) and then set the reference to null — confirm it gets garbage-collected behaviorally (no further increments).
+// My-Language Summary (Roman Urdu style — 5 lines)
+
+// Execution context wo environment hai jahan JavaScript code chalta hai; har function call apna execution context banata hai.
+// Creation phase me declarations hoist hoti hain aur this bind hota hai; let/const TDZ me rehte hain jab tak initialize na ho.
+// Scope chain lexical environment ko outer references ke through variables resolve karwana sikhaata hai — isi wajah se closures possible hain.
+// Call stack pe contexts push aur pop hote hain; asynchronous callback jab chalega to naya context ban kar stack me push hoga.
+// Best practice: let/const use karo, global kam rakho, aur closures ka dhyan rakho taake memory leaks na hon.
+
+
+
+
+
+
+
