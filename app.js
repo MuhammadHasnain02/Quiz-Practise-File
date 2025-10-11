@@ -129,7 +129,16 @@
 // func()
 // func()
 
-// ================== object For in loop =======================
+// ================== object For in loop and For of loop =======================
+
+// let num = [1,2,3,4,5]
+
+// // Key of only used array and etc
+// for(let key of num) {
+//     console.log(key);
+// }
+
+// -------------------------
 
 // let obj = {
 //     id : "01",
@@ -137,8 +146,22 @@
 //     age : 18
 // }
 
+// // Key in only used array and etc
 // for(let key in obj) {
-//     document.writeln(`${key} : ${obj[key]} <br>`);
+//     // console.log(key);
+//     // console.log(obj[key]);
+// }
+
+// -------------------------
+
+// let obj = {
+//     id : "01",
+//     name : "ali",
+//     age : 18
+// }
+
+// for(let key of obj) {
+//     console.log(key); // Uncaught TypeError: obj is not iterable
 // }
 
 // =================== localStorage ======================
@@ -342,6 +365,11 @@
 // console.log(name1);
 // console.log(name2);
 
+// --------------------
+
+// let a = (5 === 5 || 5 < 2)
+// console.log(a);
+
 // ============ Hoisting [apply: variables and Functions] ================
 
 // console.log(a); // undefined
@@ -356,6 +384,31 @@
 
 // console.log(a); // Uncaught ReferenceError: Cannot access 'a' before initialization
 // const a = "name"
+
+// --------------------
+
+// new Promise((res) => res(1))
+//   .then(v => {
+//     console.log(v); // 1
+//     return v + 1;  // returns a value -> becomes resolved value of next .then
+//   })
+//   .then(v => {
+//     console.log(v); // 2
+//     throw new Error("boom"); // throws -> next .catch runs
+//   })
+//   .catch(err => {
+//     console.error("caught:", err.message); // "caught: boom"
+//     return 42; // .catch can return value to continue chain
+//   })
+//   .then(v => console.log("after catch:", v)); // after catch: 42
+
+// --------------------
+
+
+
+// --------------------
+
+
 
 // =================== Ternery Operator ======================
 
@@ -468,6 +521,10 @@
 
 // ==================== Map, Filter and Reduce =====================
 
+// Map: return copy array
+// Filter: Create New Array
+// Reduce: return copy array
+
 // let names = ["name 1" , "name 2" , "name 3"]
 
 // use "in" all print array (index)
@@ -574,6 +631,8 @@
 // console.log(paraVal);
 
 // === Chilnodes & Parentnodes & ParentElement & NextSibling & PreviousSibling ===
+// childNodes: This property of a Node returns a NodeList containing all child nodes of that node.
+// children: This property of an Element returns an HTMLCollection containing only the child element nodes of that element.
 
 // ul[parent].li[node]
 // let ul = document.getElementById("ul")
@@ -731,6 +790,16 @@
 // let name = () => console.log("name")
 // name() // Uncaught ReferenceError: Cannot access 'name' before initialization
 // const name = () => console.log("name")
+
+// 5
+// function a(b) {
+//     console.log(b);
+//     b()
+// }
+
+// a(function() {
+//     console.log("name");
+// })
 
 // =========== Promises [Three Stages: Pending, Resolve & Reject] =============
 
@@ -1222,6 +1291,28 @@
 // console.log(nums.every(n => n % 2 === 0)); // true (all even)
 // console.log(nums.some(n => n > 5));        // true (some greater than 5)
 
+// ======== Call Stack ==========
+
+// function firstName() {
+//     console.log("ali");
+// }
+// function lastName() {
+//     console.log("khan");
+// }
+// function fullName() {
+//     firstName()
+//     lastName()
+// }
+// function age() {
+//     console.log(18);
+// }
+// function allDetl() {
+//     fullName()
+//     age()
+// }
+
+// allDetl()
+
 // ============= Multidimensional Arrays ===============
 
 // What is a Multidimensional Array?
@@ -1329,6 +1420,670 @@
 
 // console.log(cube[0][1][1]); // 4
 // console.log(cube[1][0][1]); // 6
+
+// ============= Constructor Fuction ===============
+
+// ------------- Basic Example ----------------
+
+// function User(name , age) {
+//     this.name = name
+//     this.age = age
+// }
+
+// let user1 = new User( "ali" , 18 )
+// console.log(user1);
+
+// ------------- Constructor Function with Method ----------------
+
+// function Car(name , brand) {
+//     this.name = name
+//     this.brand = brand
+
+//     this.displInfo = function() {
+//         console.log(`${this.name} ${this.brand}`);
+//     }
+// }
+
+// let car1 = new Car("Corolla", "Toyota");
+// car1.displInfo()
+
+// ------------- Using Prototype with Constructor ----------------
+
+// function Student(name, marks) {
+//     this.name = name;
+//     this.marks = marks;
+// }
+
+// Student.prototype.displStdInfo = function() {
+//     console.log( `${this.name} ${this.marks}` );
+// }
+
+// let car1 = new Student("ali", 50);
+// console.log(car1);
+
+// car1.displStdInfo()
+
+// -----------------------------
+
+// function Student(name, marks) {
+//   this.name = name;
+//   this.marks = marks;
+// }
+
+// Student.prototype.grade = function() {
+//   if (this.marks >= 90) console.log(`${this.name}: A+`);
+//   else if (this.marks >= 75) console.log(`${this.name}: A`);
+//   else console.log(`${this.name}: B`);
+// };
+
+// const s1 = new Student("Hasnain", 92);
+// const s2 = new Student("Ali", 80);
+
+// s1.grade(); // Hasnain: A+
+// s2.grade(); // Ali: A
+
+// ================= Classes ====================
+
+// ------------- Basic Example ----------------
+
+// class User {
+//     constructor(name , age) {
+//         this.name = name
+//         this.age = age
+//     }
+
+//     displInfo() {
+//         console.log( `${this.name} ${this.age}` );
+//     }
+
+// }
+
+// let user1 = new User("ali" , 18)
+// user1.displInfo()
+
+// ------------- Inheritance (Extending Classes) ----------------
+
+// class User {
+
+//     constructor(name , age) {
+//         this.name = name
+//         this.age = age
+//     }
+
+//     displInfo() {
+//         console.log( `Name: ${this.name}, Age: ${this.age}` );
+//     }
+
+// }
+
+// class Admin extends User {
+
+//     constructor(name , age , role) {
+//         super(name , age)
+//         this.role = role
+//     }
+
+//     displInfo() {
+//         console.log( `Name: ${this.name}, Age: ${this.age}, Role: ${this.role}` );
+//     }
+
+// }
+
+// const user1 = new User("ali" , 18)
+// const admin1 = new Admin("ahmed" , 18 , "admin")
+
+// user1.displInfo()
+// admin1.displInfo()
+
+// --------------------------------
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   speak() {
+//     console.log(`${this.name} makes a noise.`);
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name, breed) {
+//     super(name); // call parent constructor
+//     this.breed = breed;
+//   }
+
+//   speak() {
+//     console.log(`${this.name} barks!`);
+//   }
+// }
+
+// const dog1 = new Dog("Buddy", "Labrador");
+// dog1.speak(); // Buddy barks!
+
+// ------------- Static Methods (class-level functions) ----------------
+
+// class MathHelper {
+//     static add(a , b) {
+//         return a + b
+//     }
+// }
+
+// console.log(MathHelper.add(1 , 1));
+// console.log(MathHelper.add(5 , 5));
+
+// ------------- Getters & Setters ----------------
+
+// class User {
+//   constructor(name) {
+//     this._name = name;
+//   }
+
+//   get name() {
+//     return this._name.toUpperCase();
+//   }
+
+//   set name(value) {
+//     this._name = value.trim();
+//   }
+// }
+
+// const u1 = new User("Hasnain");
+// console.log(u1.name); // HASNAIN
+// u1.name = "  Ali  ";
+// console.log(u1.name); // ALI
+
+// ================= Raugh Practice ====================
+
+// let a = 12.1212
+// console.log(a.toFixed(2));
+// console.log(typeof a);
+
+// --------------------------------
+
+// let btn = document.createElement("button")
+// btn.textContent = "click"
+// btn.className = "text-white"
+// document.body.appendChild(btn)
+
+// btn.ondblclick = () => {
+//     console.log("hello");
+// }
+
+// btn.addEventListener("wheel" , () => {
+//     console.log("hello");
+// })
+
+// --------------------------------
+
+// alert(2 + 2);
+
+// var num = 10;
+// var anotherNum = 1;
+// var popularNumber = num + anotherNum;
+// console.log(popularNumber);
+
+// var num = 1;
+// var newNum = num++;
+// console.log(newNum);
+
+// var num = 1;
+// var newNum = ++num;
+// console.log(newNum);
+
+// var totalCost = 1 + 3 * 4;
+// console.log(totalCost);
+
+// if (fullName === "Mark" + " " + "Myers") {}
+// if (fullName === firstName + " " + "Myers") {}
+// if (fullName === firstName + " " + "Myers") {}
+// if (fullName === "firstName" + " " + "lastName") {}
+// if (totalCost === 81.50 + 135) {}
+// if (totalCost === materialsCost + 135) {}
+// if (totalCost === materialsCost + laborCost) {}
+// if (x + y === a - b) {}
+
+// --------------------------------
+
+// let weight = 310
+// let time = 2
+
+// if (weight > 300 && time < 6) {
+//     alert("Come to our tryout!");
+// }
+// else {
+//     alert("Come to our cookout!");
+// }
+
+// if (SAT > avg || GPA > 2.5 || sport === "football") {
+//     alert("Welcome to Bubba State!");
+// }
+// else {
+//     alert("Have you looked into appliance repair?");
+// }
+
+// if (c === d) {
+//     if (x === y) {
+//         g = h;
+//     }
+//     else if (a === b) {
+//         g = h;
+//     }
+//     else {
+//         e = f;
+//     }
+// }
+// else {
+//     e = f;
+// }
+
+// --------------------------------
+
+var cities = ["Atlanta", "Baltimore", "Chicago", "Seattle"]
+
+// console.log(cities);
+// console.log(cities[0]);
+
+// console.log(cities.push("city"));
+// console.log(cities);
+
+// console.log(cities.pop("Seattle"));
+// console.log(cities);
+
+// console.log(cities.unshift("city"));
+// console.log(cities);
+
+// console.log(cities.shift("Atlanta"));
+// console.log(cities);
+
+// console.log(cities);
+// let replace = cities.replace("Baltimore" , "city")
+// console.log(replace);
+
+// console.log(cities.length);
+
+// let copyArr = cities.slice(1 , 3)
+// console.log(copyArr);
+
+// console.log(cities);
+// cities.splice(1 , 1 , "city")
+// console.log(cities);
+
+// console.log(cities);
+// let copyArr = cities.slice(0 , 1)
+// console.log(copyArr[0].toUpperCase());
+// console.log(cities);
+
+// console.log(cities);
+// let copyArr = cities.slice(0 , 1)
+// console.log(copyArr[0].toLowerCase());
+// console.log(cities);
+
+// --------------------------------
+
+// let pets = []
+
+// pets[0] = "dog";
+// console.log(pets);
+
+// pets[1] = "cat";
+// console.log(pets);
+
+// pets[2] = "bird";
+// console.log(pets);
+
+// --------------------------------
+
+// let userName = "ali ahmed"
+// console.log(userName);
+
+// let find = userName.charAt(0)
+// console.log(find);
+
+// let find = userName.charCodeAt(0)
+// console.log(find);
+
+// --------------------------------
+
+// let a = 10.5
+// console.log(Math.round(a));// 11
+// console.log(Math.floor(a));// 10
+// console.log(Math.ceil(a));//  11
+
+// 0 OR 1
+// console.log(Math.floor(Math.random() * 2));
+
+// dice (0-6)
+// console.log(Math.floor(Math.random() * 6) + 1);
+
+// --------------------------------
+
+// let a = 10
+// let b = 10.8
+// let c = "12"
+// let d = "12.5"
+
+// let aa = parseInt(c)
+// console.log(typeof aa , aa);
+
+// let aa = parseInt(b)
+// console.log(typeof aa , aa);
+
+// let bb = parseFloat(d)
+// console.log(typeof bb , bb);
+
+// let cc = a.toString()
+// console.log(typeof cc , cc);
+
+// let dd = Number(c)
+// console.log(typeof dd , dd);
+
+// let dd = b.toFixed()
+// console.log(typeof dd , dd);
+
+// --------------------------------
+
+// function name(params) {}
+// let name = function(params) {}
+// let name = () => {}
+
+// --------------------------------
+
+// switch(dayOfWk) {
+
+//     case "Sat" :
+//     alert("Whoopee");
+//     break;
+
+//     case "Sun" :
+//     alert("Whoopee");
+//     break;
+
+//     case "Fri" :
+//     alert("TGIF!");
+//     break;
+
+//     default :
+//     alert("Shoot me now!");
+
+// }
+
+// --------------------------------
+
+// var i = 0;
+// while (i <= 3) {
+//     console.log(i)
+//     i++;
+// }
+
+// let i = 0
+// do {
+//     console.log(i);
+//     i++
+// } while (i <= 3);
+
+// --------------------------------
+
+// console.log(document.head.childNodes);
+
+// console.log(window.location.href);
+// console.log(document.referrer);
+// console.log(window.location.hostname);
+// console.log(window.location.pathname);
+// console.log(window.location.hash);
+
+// window.location.reload(true);
+
+// history.back();
+// history.forward();
+
+// window.open()
+
+// --------------------------------
+
+// FizzBuzz
+// This classic problem tests fundamental logic with conditional statements and loops. 
+// Problem: Print numbers from 1 to 100. For multiples of 3, print "Fizz." For multiples of 5, print "Buzz." For numbers that are multiples of both 3 and 5, print "FizzBuzz." Otherwise, print the number itself. 
+
+// Solution:
+// function fizzBuzz() {
+
+//   for (let i = 1; i <= 100; i++) {
+
+//     let output = "";
+//     if (i % 3 === 0) {
+//       output += "Fizz";
+//     }
+//     if (i % 5 === 0) {
+//       output += "Buzz";
+//     }
+//     console.log(output || i);
+    
+//   }
+
+// }
+// fizzBuzz();
+
+// --------------------------------
+
+// Palindrome checker
+// This challenge tests string manipulation and conditional logic. 
+// Problem: Write a function that returns true if a string is a palindrome (reads the same forward and backward), ignoring case and non-alphanumeric characters. 
+
+// Solution:
+// function isPalindrome(str) {
+//   // Normalize the string by removing non-alphanumeric characters and converting to lowercase
+//   const cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  
+//   // Compare the cleaned string with its reverse
+//   const reversedStr = cleanStr.split('').reverse().join('');
+  
+//   return cleanStr === reversedStr;
+// }
+
+// console.log(isPalindrome("A man, a plan, a canal. Panama")); // true
+// console.log(isPalindrome("civic")); // true
+// console.log(isPalindrome("hello")); // false
+
+// --------------------------------
+
+// Reverse a string
+// A straightforward test of string and array manipulation. 
+// Problem: Create a function that reverses a given string. 
+
+// Solution:
+// function reverseString(str) {
+//   return str.split('').reverse().join('');
+// }
+
+// console.log(reverseString("javascript")); // "tpircsavaj"
+// console.log(reverseString("civic")); // "tpircsavaj"
+
+// --------------------------------
+
+// Deep vs. shallow copy
+// This is a more advanced concept that tests your understanding of how JavaScript handles reference types like objects and arrays. 
+// Problem: Explain and implement both a shallow copy and a deep copy for an object with nested properties. 
+
+// Shallow copy implementation:
+// const original = {
+//   name: "John",
+//   address: { city: "New York" }
+// };
+// console.log(original);
+
+// const shallowCopy = { ...original };
+// shallowCopy.name = "Jane";
+// shallowCopy.address.city = "Los Angeles";
+
+// console.log(shallowCopy);
+
+// Deep copy implementation:
+// const original = {
+//   name: "John",
+//   address: { city: "New York" }
+// };
+// console.log(original);
+
+// const deepCopy = JSON.parse(JSON.stringify(original));
+// deepCopy.name = "Jane";
+// deepCopy.address.city = "Los Angeles";
+
+// console.log(deepCopy)
+
+// --------------------------------
+
+// Debounce and throttle
+// These challenges test your ability to optimize performance for events that trigger rapidly, such as user input or window resizing. 
+
+// Debounce
+// The debounce technique ensures a function is not called until a certain amount of time has passed since its last invocation. If the event is triggered again during this delay, the timer is reset. 
+// When to use debounce
+// Search input: Making an API call only after the user has stopped typing for a short period.
+// Form validation: Executing validation logic only after a user has finished entering a value into a field.
+// Autosave: Automatically saving user progress after a period of inactivity. 
+
+// Debounce implementation
+// This example uses a closure to maintain a timeoutId that is cleared and reset with each call, ensuring the function only runs after the specified delay has passed without interruption. 
+
+// const debounce = (func, delay) => {
+//   let timeoutId;
+
+//   return (...args) => {
+//     // Clear the previous timeout with each new call
+//     clearTimeout(timeoutId);
+
+//     // Set a new timer to execute the function
+//     timeoutId = setTimeout(() => {
+//       func.apply(this, args);
+//     }, delay);
+//   };
+// };
+
+// // Example usage
+// const handleSearch = (query) => {
+//   console.log(`Searching for: ${query}`);
+// };
+
+// const debouncedSearch = debounce(handleSearch, 500); // 500ms delay
+
+// const searchInput = document.getElementById('searchInput');
+// searchInput.addEventListener('input', (event) => {
+//   debouncedSearch(event.target.value);
+// });
+
+// Throttle
+// The throttle technique limits the execution of a function to, at most, once in a given time interval. It ensures the function is called at a regular pace, regardless of how often the event is triggered. 
+// When to use throttle
+// Infinite scroll: Fetching new data as a user scrolls, but only at a maximum rate (e.g., once every 250ms).
+// Mouse move events: Updating the coordinates or displaying a hint while tracking continuous mouse movement.
+// Window resize: Recalculating an element's position during a window resize, but limiting how frequently the calculation runs. 
+
+// Throttle implementation
+// This implementation uses a lastExecuted timestamp to check if the delay has passed since the last execution. This approach allows the function to execute immediately on the first call. 
+
+// const throttle = (func, delay) => {
+//   let lastExecuted = 0;
+
+//   return (...args) => {
+//     const now = Date.now();
+//     if (now - lastExecuted >= delay) {
+//       lastExecuted = now;
+//       func.apply(this, args);
+//     }
+//   };
+// };
+
+// // Example usage
+// const handleScroll = () => {
+//   console.log('Scroll event triggered');
+// };
+
+// const throttledScroll = throttle(handleScroll, 1000); // Once every 1000ms
+
+// window.addEventListener('scroll', throttledScroll);
+
+// --------------------------------
+
+// const invalidJSON = '{"name": "Alice", "age": 30,}'; // Trailing comma makes this invalid
+
+// try {
+//   const user = JSON.parse(invalidJSON);
+//   console.log(user);
+// }
+// catch (error) {
+//   console.error("Failed to parse JSON:", error.message);
+// }
+
+// --------------------------------
+
+// let a = 2
+
+// if (a === 1) {
+//     console.log(a);
+// }
+// else {
+//     throw new Error("Something went wrong!");
+// }
+
+// ---------------- closure ----------------
+// closure attached inner function and so on
+
+// scope chain (lexical scope = all scopes)
+// parent() scope global
+// child()  scope parent()
+// grandChild() scope child() and itself & all outer scope
+
+// function parent() {
+//     let a = 10
+
+//     function child() {
+//         console.log(a);
+//         let b = 20
+
+//         function grandChild() {
+//             console.log(b);
+//         }
+
+//         grandChild()
+//     }
+
+//     child()
+// }
+
+// parent()
+
+// --------------------------------
+
+// this.name = function() {
+//     console.log("object");
+// }
+
+
+
+
+// --------------------------------
+
+
+
+
+
+// --------------------------------
+
+
+
+
+
+// --------------------------------
+
+
+
+
+
+// --------------------------------
+
+
+
 
 // ========= Right Way to Copy Objects and Arrays | Deep Vs Shallow Copy =========
 
@@ -1950,6 +2705,7 @@
 // Avoid polluting global scope — minimize global variables.
 // When using this, be explicit: prefer call/apply/bind or arrow functions if you want lexical this.
 // Clean up event listeners, timers, and references when no longer needed to avoid memory leaks.
+
 // 13 — Short checklist to reason about an execution context
 // Which context is this? Global, function, or eval?
 // What declarations are hoisted in the creation phase?
@@ -1968,10 +2724,5 @@
 // Scope chain lexical environment ko outer references ke through variables resolve karwana sikhaata hai — isi wajah se closures possible hain.
 // Call stack pe contexts push aur pop hote hain; asynchronous callback jab chalega to naya context ban kar stack me push hoga.
 // Best practice: let/const use karo, global kam rakho, aur closures ka dhyan rakho taake memory leaks na hon.
-
-
-
-
-
 
 
