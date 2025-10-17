@@ -346,12 +346,14 @@
 // let name1 = "abc"
 
 // function name() {
+//     var x = 10;
 //     let name2 = "xyz"
 //     console.log(name2);
 // }
 
 // console.log(name1);
 // console.log(name2);
+// console.log(x);
 
 // --------------------
 
@@ -1679,7 +1681,7 @@
 
 // --------------------------------
 
-var cities = ["Atlanta", "Baltimore", "Chicago", "Seattle"]
+// var cities = ["Atlanta", "Baltimore", "Chicago", "Seattle"]
 
 // console.log(cities);
 // console.log(cities[0]);
@@ -2724,5 +2726,3 @@ var cities = ["Atlanta", "Baltimore", "Chicago", "Seattle"]
 // Scope chain lexical environment ko outer references ke through variables resolve karwana sikhaata hai — isi wajah se closures possible hain.
 // Call stack pe contexts push aur pop hote hain; asynchronous callback jab chalega to naya context ban kar stack me push hoga.
 // Best practice: let/const use karo, global kam rakho, aur closures ka dhyan rakho taake memory leaks na hon.
-
-
